@@ -1,0 +1,38 @@
+{% extends "ProyectoWebapp/base.html" %} {% load static %} {% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto</title>
+</head>
+
+<body>
+    <div>
+        {% if "valido" in request.GET %}            
+        <p style="color: white; justify-content: center; display: flex; margin-top: 10px;">
+            ¡Mensaje enviado! Gracias por contactar
+        </p>
+        {% elif "novalido" in request.GET %}
+        <p style="color: white; justify-content: center; display: flex; margin-top: 10px;">
+            Ha habido un error, inténtelo de nuevo más tarde
+        </p>
+        {% endif %}      
+    </div>
+
+    <div class="contenedorFormulario">        
+        <form action="" method="post">   
+            {% csrf_token %}            
+            <table style="color: white">
+                {{miFormulario.as_table}}
+            </table>
+            <div style="margin-top: 10px; justify-content: center; display: flex;">
+                <input type="submit" value="Enviar"/>
+            </div>
+        </form>
+    </div>   
+    
+</body>
+</html>
+{% endblock %}
