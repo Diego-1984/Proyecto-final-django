@@ -5,8 +5,8 @@
     <div class="container">
         <div class="intro">
             <img class="intro-img img-fluid mb-3 mb-lg-0 rounded my-5"
-                src="{{post.imagen.url}}" alt  style="width: 50%;"/>
-            <div class="intro-text left-0 text-center bg-faded p-5 rounded my-1">
+                src="{{post.imagen.url}}" alt  style="width: 500px; height: 300px; object-fit: cover;"/>
+            <div class="intro-text left-0 text-center bg-faded p-5 rounded my-3">
                 <h2 class="section-heading">
                     <span
                         class="section-heading-lower">{{post.titulo}}</span>
@@ -22,7 +22,7 @@
 {% endfor %} 
 
 <section>
-    <div style="width: 75%; margin:auto; text-align: center;color: white; word-spacing: 10px;">
+    <div style="width: 75%; margin:auto; text-align: center;color: white; word-spacing: 10px; margin-bottom: 10px;">
         Categorias:
         {% for post in posts %}
             {% for categoria in post.categorias.all %}

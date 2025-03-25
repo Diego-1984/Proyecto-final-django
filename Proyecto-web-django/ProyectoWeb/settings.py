@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'Blogapp',
     'Contactoapp',
     'Tiendapp',
+    'Carroapp',
     ]
 
 MIDDLEWARE = [
