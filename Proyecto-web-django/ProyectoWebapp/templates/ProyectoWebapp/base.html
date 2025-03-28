@@ -34,7 +34,7 @@
           <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav mx-auto">
+          <ul class="navbar-nav mx-auto d-flex">
               <li class="nav-item {% if request.resolver_match.url_name == 'Home' %}active{% endif %} px-lg-4">
                   <a class="nav-link text-uppercase text-expanded" href="{% url 'Home' %}">Inicio</a>
               </li>
@@ -50,10 +50,16 @@
               <li class="nav-item {% if request.path|slice:'6' == '/blog/' %}active{% endif %} px-lg-4">
                   <a class="nav-link text-uppercase text-expanded" href="{% url 'Blog' %}">Blog</a>
               </li>
+          </ul>          
+          <ul class="navbar-nav">
+              <li class="nav-item px-lg-4">
+                <a class="nav-link text-uppercase text-expanded" href="#">Tu carro: {{importe_total}} €</a>
+              </li>
           </ul>
       </div>
   </div>
 </nav>
+
 
     <!-- Contenido cambiante -->
      {% block content %} 
