@@ -26,3 +26,6 @@ def limpiar_carro(request, producto_id):
     carro = Carro(request)
     carro.limpiar_carro()
     return redirect("tienda")
+
+def carro(request):
+    return render(request, "carro\carro.html")

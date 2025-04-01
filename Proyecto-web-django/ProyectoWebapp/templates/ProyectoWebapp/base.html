@@ -52,10 +52,11 @@
               </li>
           </ul>          
           <ul class="navbar-nav">
-              <li class="nav-item px-lg-4">
-                <a class="nav-link text-uppercase text-expanded" href="#">Tu carro: {{importe_total}} €</a>
-              </li>
-          </ul>
+            <li class="nav-item {% if request.resolver_match.url_name == 'Carro' %}active{% endif %} px-lg-4">
+                <a class="nav-link text-uppercase text-expanded" href="{% url 'carro:Carro' %}">Tu carro: {{ importe_total }} €</a>
+            </li>
+        </ul>
+        
       </div>
   </div>
 </nav>
