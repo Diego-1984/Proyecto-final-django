@@ -20,7 +20,11 @@
                     {% for k, v in request.session.carro.items %}                        
                         <tr>
                             <td>{{ v.nombre }}</td>
-                            <td>{{ v.cantidad }}</td>                            
+                            <td>{{ v.cantidad }}</td>
+                            <td><a href="{% url 'carro:agregar' v.producto_id %}" class="btn btn-sm btn-success">+</a>
+                                <a href="{% url 'carro:restar' v.producto_id %}" class="btn btn-sm btn-success">-</a>
+                            </td>
+                            
                         </tr>
                     {% endfor %}
                 {% else %}
@@ -31,6 +35,13 @@
                 </tr>
                 {% endif %}
             </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3">
+                        Importe total: {{ importe_total }} €
+                    </td>
+                </tr>
+            </tfoot>
         </table>
     </div>
 </div>
