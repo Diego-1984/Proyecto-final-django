@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'Tiendapp',
     'Carroapp',
     'Autenticacionapp',
+    'crispy_forms',
+    'crispy_bootstrap4',
     ]
 
 MIDDLEWARE = [
@@ -143,3 +145,5 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = "dimenoruceta@hotmail.com"
 EMAIL_HOST_PASSWORD = "ixaxhouegrelcleo"
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
