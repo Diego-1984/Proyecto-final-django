@@ -1,8 +1,8 @@
 class Carro:
     def __init__(self, request):
-        self.request = request
-        self.session = request.session
-        self.carro = self.session.get("carro", {})
+        # self.request = request
+        # self.session = request.session
+        # self.carro = self.session.get("carro", {})
         self.session["carro"] = self.carro
 
     def agregar(self,producto):
