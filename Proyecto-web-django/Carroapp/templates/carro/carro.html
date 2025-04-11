@@ -44,9 +44,16 @@
                     <td colspan="4">
                         Importe total: {{ importe_total }} €
                     </td>
+                    
                 </tr>
             </tfoot>
         </table>
+
+        {% if request.session.carro.items %}
+        <div class="justify-content-center d-flex my-2">
+            <a ref="#" class="btn btn-sm btn-success" style="color: white;">Realizar pedido</a>
+        </div>
+        {% endif %}
     </div>
 </div>
 
