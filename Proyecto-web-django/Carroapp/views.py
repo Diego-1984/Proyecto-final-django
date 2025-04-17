@@ -28,9 +28,10 @@ def restar_producto(request, producto_id):
     return redirect("carro:Carro")
 
 # Limpiar el carrito completo
-def limpiar_carro(request, producto_id):
+def limpiar_carro(request):
     carro = Carro(request)
     carro.limpiar_carro()
+    messages.success(request, "¡Pedido realizado correctamente!")
     return redirect("carro:Carro")
 
 # Vista protegida del carrito

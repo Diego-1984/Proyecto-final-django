@@ -1,6 +1,13 @@
 {% extends "ProyectoWebapp/base.html" %}
 {% load static %}
 {% block content %}
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-success text-center mt-3 w-50 mx-auto" role="alert" >
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endif %}
 
 <div class="container d-flex justify-content-center mt-4">
     <div class="table-responsive" style="max-width: 60%;">
@@ -51,7 +58,7 @@
 
         {% if request.session.carro.items %}
         <div class="justify-content-center d-flex my-2">
-            <a ref="#" class="btn btn-sm btn-success" style="color: white;">Realizar pedido</a>
+            <a href="{% url 'carro:realizar_pedido' %}" class="btn btn-sm btn-success" style="color: white;">Realizar pedido</a>
         </div>
         {% endif %}
     </div>
